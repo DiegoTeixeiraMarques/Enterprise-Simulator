@@ -4,16 +4,17 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Personalidade reflexivoExt = new Personalidade("ReflexivoExt", 800, 300, 900, 500, 600, 700, 900, 700);
-		Personalidade reflexivoInt = new Personalidade("ReflexivoInt", 600, 200, 800, 500, 900, 1000, 600, 400);
-		Personalidade sentimentalExt = new Personalidade("SentimentalExt", 700, 1000, 200, 1000, 600, 700, 800, 200);
-		Personalidade sentimentalInt = new Personalidade("SentimentalInt", 800, 200, 300, 200, 800, 800, 900, 400);
-		Personalidade perceptivoExt = new Personalidade("PerceptivoExt", 500, 700, 600, 600, 1000, 900, 800, 700);
-		Personalidade perceptivoInt = new Personalidade("PerceptivoInt", 600, 800, 700, 800, 900, 800, 600, 500);
-		Personalidade intuitivoExt = new Personalidade("IntuitivoExt", 800, 300, 800, 300, 900, 800, 1000, 600);
-		Personalidade intuitivoInt = new Personalidade("IntuitivoInt", 600, 900, 900, 700, 1000, 800, 900, 800);
+		Personalidade reflexivoExt = new Personalidade("ReflexivoExt", 8, 3, 9, 5, 6, 7, 9, 7);
+		Personalidade reflexivoInt = new Personalidade("ReflexivoInt", 6, 2, 8, 5, 9, 10, 6, 4);
+		Personalidade sentimentalExt = new Personalidade("SentimentalExt", 7, 10, 2, 10, 6, 7, 8, 2);
+		Personalidade sentimentalInt = new Personalidade("SentimentalInt", 8, 2, 3, 2, 8, 8, 9, 4);
+		Personalidade perceptivoExt = new Personalidade("PerceptivoExt", 5, 7, 6, 6, 10, 9, 8, 7);
+		Personalidade perceptivoInt = new Personalidade("PerceptivoInt", 6, 8, 7, 8, 9, 8, 6, 5);
+		Personalidade intuitivoExt = new Personalidade("IntuitivoExt", 8, 3, 8, 3, 9, 8, 10, 6);
+		Personalidade intuitivoInt = new Personalidade("IntuitivoInt", 6, 9, 9, 7, 10, 8, 9, 8);
 		
-		Personalidade max = new Personalidade("Maximo", 10, 10, 10, 10, 10, 10, 10, 10);
+		Personalidade max = new Personalidade("Maximo", 5, 5, 5, 5, 5, 5, 5, 5);
+		Maquina maquina = new Maquina(0, 5, 5, 5);
 		
 		//ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
 		
@@ -25,6 +26,8 @@ public class Main {
 		ArrayList<Pessoa> perceptivoInt6 = new ArrayList<Pessoa>();
 		ArrayList<Pessoa> intuitivoExt7 = new ArrayList<Pessoa>();
 		ArrayList<Pessoa> intuitivoInt8 = new ArrayList<Pessoa>();
+		ArrayList<Maquina> maquinas = new ArrayList<Maquina>();
+		
 		
 		ArrayList<Pessoa> maximo = new ArrayList<Pessoa>();
 	
@@ -37,13 +40,18 @@ public class Main {
 		perceptivoInt6.add(new Pessoa("PerceptivoInt", perceptivoInt));
 		intuitivoExt7.add(new Pessoa("IntuitivoExt", intuitivoExt));
 		intuitivoInt8.add(new Pessoa("IntuitivoInt", intuitivoInt));
+		maquinas.add(maquina);
+		/*
+		for(int i=0;i<20;i++) {
+			maximo.add(new Pessoa("Maximo0", max));
+		//maximo.add(new Pessoa("Maximo1", max));
+		//maximo.add(new Pessoa("Maximo2", max));
+		//maximo.add(new Pessoa("Maximo3", max));
 		
-		maximo.add(new Pessoa("Maximo0", max));
-		maximo.add(new Pessoa("Maximo1", max));
-		maximo.add(new Pessoa("Maximo2", max));
-		maximo.add(new Pessoa("Maximo3", max));
+		}
+		*/
 		maximo.add(new Pessoa("Maximo4", max));
-		
+		//maximo.add(new Pessoa("Maximo4", max));
 		/*
 		for(int index = 0; index < pessoas.size(); index++) {
 			Pessoa pes = (Pessoa) pessoas.get(index);
@@ -100,10 +108,16 @@ public class Main {
 		A8.status();
 		
 		Empresa A9 = new Empresa(maximo);
+		//A9.comprarMaquina(maquinas);
 		System.out.println();
 		Pessoa B9 = A9.funcionarios.get(0);
 		System.out.println(B9.nome);
 		A9.status();
+		
+		System.out.println();
+		System.out.println(maquina.sofisticacao);
+		
+		
 		
 	}
 

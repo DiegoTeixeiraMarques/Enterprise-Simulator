@@ -13,7 +13,7 @@ public class Personalidade {
 	
 	public Personalidade(String tipo, int resultado, int relacionamento, int resiliencia,
 							int comunicacao, int criatividade, int intelTecnica, 
-							int comprometimento, int adaptacao) {
+								int comprometimento, int adaptacao) {
 		
 		this.tipo = tipo;
 		this.resultado = resultado;
