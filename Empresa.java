@@ -3,6 +3,7 @@ import java.util.*;
 public class Empresa {
 
 	ArrayList<Pessoa> funcionarios;
+	ArrayList<Maquina> maquinas;
 	int inovacao;
 	int culturaOrg;
 	int atendimento;
@@ -10,10 +11,10 @@ public class Empresa {
 	int qualidade;
 	int tecnologia;
 	
+	
 	public Empresa(ArrayList<Pessoa> funcionarios) {
-		
 		this.funcionarios = funcionarios;
-		this.contratar();
+		this.contratar(funcionarios);
 		
 	}
 	
@@ -32,70 +33,87 @@ public class Empresa {
 											this.atendimento));
 	}
 	
-	public void contratar() {
+	public void contratar(ArrayList<Pessoa> funcionarios) {
 		
-		int B = 1;
-		int C = 10;
+		int B = 2;
+		int C = 3;
 
-		for(int index = 0; index < this.funcionarios.size(); index++) {
+		for(int index = 0; index < funcionarios.size(); index++) {
 			
-			this.tecnologia += (this.funcionarios.get(index).habilidades.resultado * C) + 
-								(this.funcionarios.get(index).habilidades.resiliencia) + 
-									(this.funcionarios.get(index).habilidades.relacionamento) +
-										(this.funcionarios.get(index).habilidades.intelTecnica * C) +
-											(this.funcionarios.get(index).habilidades.criatividade * C) +
-												(this.funcionarios.get(index).habilidades.comunicacao * C) +
-													(this.funcionarios.get(index).habilidades.comprometimento * C) +
-														(this.funcionarios.get(index).habilidades.adaptacao);
-			this.satisfacaoCliente += (this.funcionarios.get(index).habilidades.resultado * C) + 
-					(this.funcionarios.get(index).habilidades.resiliencia) + 
-						(this.funcionarios.get(index).habilidades.relacionamento) +
-							(this.funcionarios.get(index).habilidades.intelTecnica * 3) +
-								(this.funcionarios.get(index).habilidades.criatividade) +
-									(this.funcionarios.get(index).habilidades.comunicacao * C) +
-										(this.funcionarios.get(index).habilidades.comprometimento * C) +
-											(this.funcionarios.get(index).habilidades.adaptacao);
-			this.qualidade += (this.funcionarios.get(index).habilidades.resultado * C) + 
-					(this.funcionarios.get(index).habilidades.resiliencia) + 
-						(this.funcionarios.get(index).habilidades.relacionamento * C) +
-							(this.funcionarios.get(index).habilidades.intelTecnica * C) +
-								(this.funcionarios.get(index).habilidades.criatividade * B) +
-									(this.funcionarios.get(index).habilidades.comunicacao) +
-										(this.funcionarios.get(index).habilidades.comprometimento * C) +
-											(this.funcionarios.get(index).habilidades.adaptacao);
-			this.inovacao += (this.funcionarios.get(index).habilidades.resultado * C) + 
-					(this.funcionarios.get(index).habilidades.resiliencia * B) + 
-						(this.funcionarios.get(index).habilidades.relacionamento * B) +
-							(this.funcionarios.get(index).habilidades.intelTecnica * C) +
-								(this.funcionarios.get(index).habilidades.criatividade * C) +
-									(this.funcionarios.get(index).habilidades.comunicacao * C) +
-										(this.funcionarios.get(index).habilidades.comprometimento * C) +
-											(this.funcionarios.get(index).habilidades.adaptacao);
-			this.culturaOrg += (this.funcionarios.get(index).habilidades.resultado) + 
-					(this.funcionarios.get(index).habilidades.resiliencia * C) + 
-						(this.funcionarios.get(index).habilidades.relacionamento * C) +
-							(this.funcionarios.get(index).habilidades.intelTecnica) +
-								(this.funcionarios.get(index).habilidades.criatividade) +
-									(this.funcionarios.get(index).habilidades.comunicacao * C) +
-										(this.funcionarios.get(index).habilidades.comprometimento * B) +
-											(this.funcionarios.get(index).habilidades.adaptacao * C);
-			this.atendimento += (this.funcionarios.get(index).habilidades.resultado * B) + 
-					(this.funcionarios.get(index).habilidades.resiliencia) + 
-						(this.funcionarios.get(index).habilidades.relacionamento * C) +
-							(this.funcionarios.get(index).habilidades.intelTecnica) +
-								(this.funcionarios.get(index).habilidades.criatividade * C) +
-									(this.funcionarios.get(index).habilidades.comunicacao * C) +
-										(this.funcionarios.get(index).habilidades.comprometimento * C) +
-											(this.funcionarios.get(index).habilidades.adaptacao);
+			this.tecnologia += (funcionarios.get(index).habilidades.resultado * C) + 
+								(funcionarios.get(index).habilidades.resiliencia) + 
+									(funcionarios.get(index).habilidades.relacionamento) +
+										(funcionarios.get(index).habilidades.intelTecnica * C) +
+											(funcionarios.get(index).habilidades.criatividade * C) +
+												(funcionarios.get(index).habilidades.comunicacao * C) +
+													(funcionarios.get(index).habilidades.comprometimento * C) +
+														(funcionarios.get(index).habilidades.adaptacao);
+			this.satisfacaoCliente += (funcionarios.get(index).habilidades.resultado * C) + 
+					(funcionarios.get(index).habilidades.resiliencia) + 
+						(funcionarios.get(index).habilidades.relacionamento) +
+							(funcionarios.get(index).habilidades.intelTecnica * 3) +
+								(funcionarios.get(index).habilidades.criatividade) +
+									(funcionarios.get(index).habilidades.comunicacao * C) +
+										(funcionarios.get(index).habilidades.comprometimento * C) +
+											(funcionarios.get(index).habilidades.adaptacao);
+			this.qualidade += (funcionarios.get(index).habilidades.resultado * C) + 
+					(funcionarios.get(index).habilidades.resiliencia) + 
+						(funcionarios.get(index).habilidades.relacionamento * C) +
+							(funcionarios.get(index).habilidades.intelTecnica * C) +
+								(funcionarios.get(index).habilidades.criatividade * B) +
+									(funcionarios.get(index).habilidades.comunicacao) +
+										(funcionarios.get(index).habilidades.comprometimento * C) +
+											(funcionarios.get(index).habilidades.adaptacao);
+			this.inovacao += (funcionarios.get(index).habilidades.resultado * C) + 
+					(funcionarios.get(index).habilidades.resiliencia * B) + 
+						(funcionarios.get(index).habilidades.relacionamento * B) +
+							(funcionarios.get(index).habilidades.intelTecnica * C) +
+								(funcionarios.get(index).habilidades.criatividade * C) +
+									(funcionarios.get(index).habilidades.comunicacao * C) +
+										(funcionarios.get(index).habilidades.comprometimento * C) +
+											(funcionarios.get(index).habilidades.adaptacao);
+			this.culturaOrg += (funcionarios.get(index).habilidades.resultado) + 
+					(funcionarios.get(index).habilidades.resiliencia * C) + 
+						(funcionarios.get(index).habilidades.relacionamento * C) +
+							(funcionarios.get(index).habilidades.intelTecnica) +
+								(funcionarios.get(index).habilidades.criatividade) +
+									(funcionarios.get(index).habilidades.comunicacao * C) +
+										(funcionarios.get(index).habilidades.comprometimento * B) +
+											(funcionarios.get(index).habilidades.adaptacao * C);
+			this.atendimento += (funcionarios.get(index).habilidades.resultado * B) + 
+					(funcionarios.get(index).habilidades.resiliencia) + 
+						(funcionarios.get(index).habilidades.relacionamento * C) +
+							(funcionarios.get(index).habilidades.intelTecnica) +
+								(funcionarios.get(index).habilidades.criatividade * C) +
+									(funcionarios.get(index).habilidades.comunicacao * C) +
+										(funcionarios.get(index).habilidades.comprometimento * C) +
+											(funcionarios.get(index).habilidades.adaptacao);
 		}
 		
-		this.tecnologia = this.tecnologia / 100;
-		this.satisfacaoCliente = this.satisfacaoCliente / 100;
-		this.qualidade = this.qualidade / 100;
-		this.inovacao = this.inovacao / 100;
-		this.culturaOrg = this.culturaOrg / 100;
-		this.atendimento = this.atendimento / 100;
+			
+		//this.tecnologia = this.tecnologia / 100;
+		//this.satisfacaoCliente = this.satisfacaoCliente / 100;
+		//this.qualidade = this.qualidade / 100;
+		//this.inovacao = this.inovacao / 100;
+		//this.culturaOrg = this.culturaOrg / 100;
+		//this.atendimento = this.atendimento / 100;
 	}
 	
+	public void comprarMaquina(ArrayList<Maquina> maquinas) {
+		
+		int B = 2;
+		int C = 3;
+		
+		for(int index = 0; index < maquinas.size(); index++) {
+			this.tecnologia += (maquinas.get(index).sofisticacao * C);			
+			this.satisfacaoCliente += (maquinas.get(index).sofisticacao * C);				
+			this.qualidade += (maquinas.get(index).sofisticacao * C);			
+			this.inovacao += (maquinas.get(index).sofisticacao * B);									
+			this.culturaOrg += (maquinas.get(index).sofisticacao);					
+			this.atendimento += (maquinas.get(index).sofisticacao * B);
+						
+							
+		}
+	}
 	
 }
